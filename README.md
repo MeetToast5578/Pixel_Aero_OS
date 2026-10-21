@@ -51,7 +51,7 @@ The first implementation will use a local background image in a self-contained d
 
 ## 🖼️ Visual references and wallpapers
 
-Browse the [visual reference catalog](references/README.md) and the [wallpaper style catalog](wallpapers/README.md). The catalogs are available now; the full-size PNG files are prepared separately and still need to be uploaded to GitHub. The images are design concepts, not screenshots of an implemented desktop.
+Browse the [visual reference catalog](references/README.md) and the [wallpaper style catalog](wallpapers/README.md). The catalogs include the PNG reference images and standalone wallpaper concepts. The images are design concepts, not screenshots of an implemented desktop.
 
 ## 🚀 Getting started
 
