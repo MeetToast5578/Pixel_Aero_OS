@@ -49,6 +49,10 @@ The first implementation will use a local background image in a self-contained d
 
 📋 **[Read the full development plan](plan.md)** for architecture, milestones, constraints, and the first Codex development ticket.
 
+## 🖼️ Visual references and wallpapers
+
+Browse the [visual reference catalog](references/README.md) and the [wallpaper style catalog](wallpapers/README.md). The catalogs are available now; the full-size PNG files are prepared separately and still need to be uploaded to GitHub. The images are design concepts, not screenshots of an implemented desktop.
+
 ## 🚀 Getting started
 
 **There is no stable release or installation package yet.** For development, the intended target is a recent supported Fedora KDE installation (preferably on a test machine, separate partition, or virtual machine).
