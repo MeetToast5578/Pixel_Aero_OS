@@ -13,7 +13,7 @@ The project is **not** a Windows Vista/7 clone, macOS clone, or generic blue tra
 
 Core principles:
 - **True Pixel Aero:** pixel-grid-aligned shapes, sprites, borders, highlights, icons and material patterns; do not simply downscale smooth modern UI.
-- **Tech Glass:** aqua crystal surfaces, deliberate pixel refraction, ordered dithering, stepped highlights and layered bright rims.
+- **Glass Pixels:** pixel-structured frames, icons and stepped silhouettes containing dynamic liquid-glass interiors with real translucency, backdrop-responsive refraction, reflections and gentle motion. **The glass moves; the pixels stay disciplined.**
 - **Bright future:** skies, foliage, lakes, bubbles, sunlight, optimistic technology; avoid cyberpunk gloom and visual clutter.
 - **Hybrid usability:** a compact top menu/status bar, a useful bottom AeroBar dock/taskbar, a fast app launcher, responsive window management.
 - **Readability first:** clear typography, contrast, keyboard navigation, reduced-motion and reduced-transparency modes.
@@ -34,11 +34,13 @@ Core principles:
 | Art tools | Aseprite or LibreSprite | Sprites, textures, cursors |
 | Versioning/build | Git, CMake, packaging/CI scripts | Reproducible development and releases |
 
-**Architectural boundary:** an ordinary Plasma theme or QML item cannot freely sample the pixels behind arbitrary Wayland windows. The first Tech Glass prototype should operate on a known image inside its own window. True desktop-wide backdrop pixelation/refraction is a **separate feasibility milestone**, requiring supported KWin effect integration or a documented fallback. Do not promise universal backdrop sampling from a theme.
+**Architectural boundary:** an ordinary Plasma theme or QML item cannot freely sample the pixels behind arbitrary Wayland windows. The first Glass Pixels prototype should operate on a known image inside its own window. True desktop-wide backdrop pixelation/refraction is a **separate feasibility milestone**, requiring supported KWin effect integration or a documented fallback. Do not promise universal backdrop sampling from a theme.
 
 **Distribution strategy:** start with a non-destructive KDE package; only build a Fedora-based installable image after the shell works reliably. Do not fork the Linux kernel or rewrite a window manager.
 
 ## 3. Pixel Aero visual specification (v0.1)
+
+The complete design identity is documented in [docs/design-identity.md](docs/design-identity.md). Frutiger Aero sets the atmosphere, pixel art defines the geometry, and dynamic liquid glass defines the material response. Avoid both static painted-glass-only art and generic smooth blur with a pixelation filter.
 
 ### 3.1 Palette
 
@@ -75,14 +77,16 @@ Material parameters to expose: `pixelSize`, `tintColor`, `tintStrength`, `backgr
 
 The settings shown in early concept art are **art direction**, not implemented functionality.
 
-## 4. Tech Glass Engine
+## 4. Glass Pixels Engine
+
+**Material goal:** a crisp pixel-art shell containing a genuinely dynamic liquid-glass interior. Do not force the whole backdrop into visible checkerboard pixels; controlled liquid translucency is as important as pixel-aligned boundaries.
 
 ### 4.1 Visual pipeline (target)
 
 1. Obtain a legal/available background texture (prototype: bundled wallpaper image).
-2. Transform UVs to a configurable pixel grid.
-3. Quantize sample position; optionally perturb it with a **grid-aligned** refraction map.
-4. Sample background using an intentional filtering policy.
+2. Apply a configurable pixel grid to interface geometry and selected material details; preserve enough continuous background information for convincing liquid glass.
+3. Add motion-responsive refraction to the available background, with pixel-aware stylization and a controlled distortion strength.
+4. Sample the background with an intentional filtering policy: crisp artwork where needed, gentle optical continuity within the transparent glass interior.
 5. Apply ordered dithering / quantization selectively rather than indiscriminate noise.
 6. Tint with aqua/glass material parameters.
 7. Apply pixel-grid-aligned highlight masks, edge rims, inset shadow and restrained shine.
@@ -182,7 +186,7 @@ This is a **source layout**, not a claim that every folder maps directly to a Pl
 
 **Done when:** versioned environment guide, design reference board and contribution conventions exist.
 
-### Phase 1 — Standalone Tech Glass Lab (first coded milestone)
+### Phase 1 — Standalone Glass Pixels Lab (first coded milestone)
 - [ ] Build a runnable Qt 6 / QML demo with a bundled local wallpaper.
 - [ ] Display multiple draggable glass panels over that wallpaper.
 - [ ] Implement Aero, Crystal, Frost and Water material presets.
@@ -232,7 +236,7 @@ This is a **source layout**, not a claim that every folder maps directly to a Pl
 
 ## 8. First Codex development ticket
 
-**Title:** Build standalone Pixel Aero Tech Glass Lab v0.1
+**Title:** Build standalone Pixel Aero Glass Pixels Lab v0.1
 
 **Scope:**
 - Implement a small, buildable Qt 6/QML desktop demo using CMake.
@@ -278,5 +282,7 @@ This is a **source layout**, not a claim that every folder maps directly to a Pl
 5. Capture screenshots and iterate on the material before developing the full shell.
 
 ---
+
+**Visual principle:** The glass moves; the pixels stay disciplined.
 
 **Project rule:** Be ambitious about the appearance and conservative about desktop stability. Every advanced effect must have a safe, readable fallback.
