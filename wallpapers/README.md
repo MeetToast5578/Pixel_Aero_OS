@@ -2,7 +2,9 @@
 
 These designs explore multiple moods under the **same Pixel Aero / Frutiger Aero art direction**: pixel-art nature, glossy aquatic light, optimistic futuristic environments and rich saturated color.
 
-**Resolution note:** Wallpapers 01–16 are 1920×1080 *nearest-neighbor enlargements* of approximately 320×180 native crops from an AI-generated 4×4 storyboard. They are intentionally pixelated and useful for visual prototyping, but are **not true high-detail 4K originals**, regardless of decorative text in the storyboard. `00-azure-eco-city-original.png` is an independent full-size concept illustration.
+**Refined versions:** A [new detailed pixel-art set](refined/README.md) recreates all sixteen themed scenes with finer detail and removes cropped caption bars. The original concepts below are preserved.
+
+**Original concept resolution note:** Wallpapers 01–16 are 1920×1080 *nearest-neighbor enlargements* of approximately 320×180 native crops from an AI-generated 4×4 storyboard. They are intentionally pixelated and useful for visual prototyping, but are **not true high-detail 4K originals**, regardless of decorative text in the storyboard. `00-azure-eco-city-original.png` is an independent full-size concept illustration.
 
 | Wallpaper | Mood |
 | --- | --- |
